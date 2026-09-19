@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATC RADAR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>ATC RADAR</h1>
+        <span id="status">NRT APPROACH</span>
+      </div>
+      <div id="clock">00:00:00</div>
+    </header>
+
+    <section class="radar-wrap">
+      <canvas id="radar"></canvas>
+      <div id="message"></div>
+    </section>
+
+    <section class="control">
+      <div class="selected">
+        <div>SELECTED: <strong id="selectedCall">NONE</strong></div>
+        <div class="stats">
+          ALT <span id="alt">----</span> FT
+          <span class="sep">|</span>
+          SPD <span id="spd">----</span> KT
+          <span class="sep">|</span>
+          HDG <span id="hdg">---</span>°
+        </div>
+      </div>
+
+      <div class="inputs">
+        <label>HDG <input id="heading" type="number" min="0" max="359" placeholder="270"></label>
+        <label>ALT <input id="altitude" type="number" min="500" max="18000" step="100" placeholder="3500"></label>
+        <label>SPD <input id="speed" type="number" min="80" max="450" placeholder="180"></label>
+        <button id="send">SEND</button>
+      </div>
+
+      <div class="hint">
+        航空機をクリックして選択 → HDG / ALT / SPD を入力 → SEND
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

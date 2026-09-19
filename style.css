@@ -1,0 +1,161 @@
+* { box-sizing: border-box; }
+
+:root {
+  --green: #39ff88;
+  --dim: #168f4c;
+  --dark: #020604;
+  --panel: #06100a;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: var(--green);
+  font-family: "Courier New", monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.app {
+  width: min(1200px, 100vw);
+  height: 100vh;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+header {
+  height: 58px;
+  border: 1px solid var(--dim);
+  background: var(--panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+header span {
+  font-size: 12px;
+  opacity: .7;
+}
+
+#clock {
+  font-size: 18px;
+}
+
+.radar-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border: 1px solid var(--dim);
+  background: #000;
+  overflow: hidden;
+}
+
+#radar {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#message {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  font-size: 13px;
+  pointer-events: none;
+  text-shadow: 0 0 8px var(--green);
+}
+
+.control {
+  border: 1px solid var(--dim);
+  background: var(--panel);
+  padding: 12px;
+}
+
+.selected {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #0c542d;
+  padding-bottom: 9px;
+  font-size: 14px;
+}
+
+.stats {
+  white-space: nowrap;
+}
+
+.sep {
+  opacity: .4;
+  margin: 0 7px;
+}
+
+.inputs {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  margin-top: 10px;
+}
+
+label {
+  font-size: 12px;
+}
+
+input {
+  display: block;
+  margin-top: 4px;
+  width: 105px;
+  background: #000;
+  color: var(--green);
+  border: 1px solid var(--dim);
+  padding: 8px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 7px #168f4c;
+}
+
+button {
+  height: 35px;
+  padding: 0 24px;
+  background: #000;
+  color: var(--green);
+  border: 1px solid var(--green);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--green);
+  color: #000;
+}
+
+.hint {
+  margin-top: 9px;
+  font-size: 11px;
+  opacity: .55;
+}
+
+@media (max-width: 700px) {
+  .app { padding: 6px; }
+  .selected { flex-direction: column; gap: 6px; }
+  .inputs { flex-wrap: wrap; }
+  input { width: 90px; }
+}
